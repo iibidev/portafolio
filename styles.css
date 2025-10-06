@@ -1,0 +1,430 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #f6f6f6;          /* Fondo casi blanco, limpio y moderno */
+    --color-bg-secondary: #ffffff;
+    --color-text: #222831;        /* Gris oscuro con buen contraste y elegancia */
+    --color-primary: #00B894;     /* Verde esmeralda fresco, transmite libertad y energía */
+    --color-secondary: #00CEC9;   /* Turquesa claro, vibrante y armonioso con el verde */
+    --color-primary-hover: #009875;   /* un verde un poco más oscuro que el primary */
+    --color-secondary-hover: #00B3B0; /* un turquesa más intenso que el secondary */
+    --color-accent1: #FFD166;     /* Amarillo cálido, da vida y resalta sin ser agresivo */
+    --color-accent2: #FF6B6B;     /* Coral fuerte, perfecto para detalles o llamados a la acción */
+    --page-width: 60%;
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #161616;          /* Fondo casi negro, elegante y suave para los ojos */
+    --color-bg-secondary: #242424;
+    --color-text: #EDEDED;        /* Texto claro para alto contraste sin llegar a blanco puro */
+    --color-primary: #00D8A4;     /* Verde esmeralda más luminoso, resalta bien sobre oscuro */
+    --color-secondary: #00E5DF;   /* Turquesa brillante que aporta frescura y contraste */
+    --color-primary-hover: #029e74;   /* Verde más profundo al pasar el ratón */
+    --color-secondary-hover: #02918e; /* Turquesa más intenso y cálido al hacer hover */
+    --color-accent1: #FFD97D;     /* Amarillo suave pero visible sobre fondo oscuro */
+    --color-accent2: #FF7B7B;     /* Coral más claro y vibrante para botones o alertas */
+    --page-width: 60%;
+}
+
+h1, h2, h3, h4{
+    font-family: "Poppins", sans-serif;
+    width: fit-content;
+}
+
+p, span, a{
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header{
+    width: var(--page-width);
+    display: flex;
+    justify-content: flex-end;
+    padding-block: 20px;
+}
+
+.lightDarkModeBtn{
+    all: unset;
+    cursor: pointer;
+    transition: ease .3s;
+}
+
+.lightDarkModeBtn:hover{
+    transform: scale(1.1);
+}
+
+.lightDarkModeBtn > i{
+    font-size: 28px;
+    color: var(--color-text);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: var(--page-width);
+}
+
+.about{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about__info{
+    display: flex;
+    gap: 15px;
+}
+
+.info__photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.info__data{
+    display: flex;
+    flex-direction: column;
+}
+
+.data__name{
+    width: fit-content;
+    text-align: center;
+}
+
+.data__role{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.data__status{
+    width: fit-content;
+    font-size: 18px;
+    font-weight: 800;
+    background: linear-gradient(270deg, var(--color-primary-hover), var(--color-primary), var(--color-secondary-hover));
+    background-clip: text;
+    color: transparent;
+    background-size: 600% 600%;
+    animation: move ease 3s infinite;
+}
+
+.data__socials{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.socials__link{
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--color-bg);
+    border-radius: 9999px;
+    padding: 5px 10px;
+    background-color: var(--color-secondary);
+    transition: ease .3s;
+}
+
+.socials__link:hover{
+    background-color: var(--color-secondary-hover);
+}
+
+.socials__link--primary{
+    background-color: var(--color-primary);
+}
+
+.socials__link--primary:hover{
+    background-color: var(--color-primary-hover);
+}
+
+.about__me{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.about__text{
+    font-size: 17px;
+}
+
+.divider{
+    width: 100%;
+    border-top: 1px solid rgb(133, 133, 133);
+    margin-top: 30px;
+}
+
+.skills{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.skills__all{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skills__skill{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+}
+
+.skill__icon{
+    width: 30px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.skill__name{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.experience, .education{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.experience__all, .education__all{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.experience__job, .education__study{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.experience__logo, .education__logo{
+    width: 90px;
+    object-fit: contain;
+}
+
+.job__info, .study__info{
+    display: flex;
+    flex-direction: column;
+}
+
+.job__company,.study__school{
+    font-size: 20px;
+}
+
+.job__role, .study__role{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.role__name, .study__role{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.job__duration, .study__duration{
+    font-weight: 700;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 999px;
+    color: var(--color-bg);
+    background-color: var(--color-accent1);
+}
+
+.job__description, .study__description{
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.projects{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects__all{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.project__info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projects__project{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 20px;
+    gap: 20px;
+    background-color: var(--color-bg-secondary);
+}
+
+.project__photo{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.project__text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project__stack{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stack__name{
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 999px;
+}
+
+.project__options{
+    display: flex;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.project__see{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    transition: ease .3s;
+}
+
+.project__see:hover{
+    background-color: var(--color-primary-hover);
+}
+
+.project__code{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+    transition: ease .3s;
+}
+
+.project__code:hover{
+    background-color: var(--color-secondary-hover);
+}
+
+footer{
+    display: flex;
+    width: var(--page-width);
+    flex-direction: column;
+    padding-block: 30px;
+    gap: 8px;
+}
+
+footer .data__socials{
+    margin-top: 0px;
+}
+
+@media (width < 900px){
+    :root, :root[data-theme="dark"]{
+        --page-width: 80%;
+    }
+}
+
+@media (width < 650px){
+    :root, :root[data-theme="dark"]{
+        --page-width: 90%;
+    }
+}
+
+@media (width < 550px){
+    .about__info{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info__data, .about__me, .skills, 
+    .education, .experience, .projects{
+        align-items: center;
+    }
+
+    .data__socials, .skills__all{
+        justify-content: center;
+    }
+
+    .education__logo, .experience__logo{
+        width: 50px;
+    }
+
+    .study__school, .job__company{
+        font-size: 17px;
+    }
+
+    .study__role, .job__role{
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .study__name, .role__name{
+        font-size: 16px;
+    }
+
+    .study__duration, .job__duration{
+        font-size: 12px;
+    }
+
+    .study__description, .job__description{
+        font-size: 15px;
+    }
+
+    .projects__all{
+        grid-template-columns: 1fr;
+    }
+
+    .project__options a{
+        width: 100%;
+        text-align: center;
+    }
+
+    footer{
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@keyframes move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
