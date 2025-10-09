@@ -41,12 +41,99 @@ p, span, a{
 }
 
 body{
+    color: var(--color-text);
+    background: linear-gradient(135deg, #ff4dc4, #c047ff, #5f78ff);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.welcome{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 99999;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--color-text);
+    justify-content: center;
+}
+
+.welcome__pic{
+    width: 150px;
+    opacity: 0;
+    animation: appear ease-out .8s forwards;
+}
+
+.welcome__animation{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.welcome__text{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    opacity: 0;
+    color: var(--color-bg);
+    animation: showUp ease-out .5s forwards .6s;
+}
+
+.welcome__btn{
+    border-radius: 999px;
     background-color: var(--color-bg);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: ease-in-out .3s;
+    opacity: 0;
+    animation: showUp ease-out .5s forwards .9s;
+}
+
+.welcome__btn:hover{
+    transform: scale(.9);
+}
+
+.welcome__enter{
+    width: fit-content;
+    border: none;
+    font-weight: 600;
+    font-size: 19px;
+    background: linear-gradient(135deg, #ff4dc4, #c047ff, #5f78ff);
+    color: transparent;
+    background-clip: text;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.backgroundMask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
+    background-color: var(--color-bg);
+    mask-image: url('./assets/imask.webp');
+    mask-repeat: no-repeat;
+    mask-position: center 50%;
+    mask-size: 0px;
+}
+
+.masked{
+    animation: mask ease 6s forwards;
+}
+
+@keyframes mask {
+    from{
+        mask-size: 150px;
+    }
+    to{
+        mask-size: 1000vw;
+    }
 }
 
 header{
@@ -420,6 +507,28 @@ footer .data__socials{
     footer{
         align-items: center;
         gap: 10px;
+    }
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes showUp {
+    from{
+        scale: 0;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
     }
 }
 
