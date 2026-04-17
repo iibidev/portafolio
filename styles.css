@@ -127,15 +127,6 @@ body{
     animation: mask ease 6s forwards;
 }
 
-@keyframes mask {
-    from{
-        mask-size: 150px;
-    }
-    to{
-        mask-size: 1000vw;
-    }
-}
-
 header{
     width: var(--page-width);
     display: flex;
@@ -190,7 +181,6 @@ main{
 
 .data__name{
     width: fit-content;
-    text-align: center;
 }
 
 .data__role{
@@ -236,6 +226,16 @@ main{
 
 .socials__link--primary:hover{
     background-color: var(--color-primary-hover);
+}
+
+.socials__link--secondary{
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: transparent;
+
+    &:hover{
+        background-color: transparent;
+    }
 }
 
 .about__me{
@@ -466,6 +466,11 @@ footer .data__socials{
         align-items: center;
     }
 
+    .data__name, .data__role{
+        text-align: center;
+        text-wrap-style: balance;
+    }
+
     .data__socials, .skills__all{
         justify-content: center;
     }
@@ -507,6 +512,15 @@ footer .data__socials{
     footer{
         align-items: center;
         gap: 10px;
+    }
+}
+
+@keyframes mask {
+    from{
+        mask-size: 150px;
+    }
+    to{
+        mask-size: 1000vw;
     }
 }
 
