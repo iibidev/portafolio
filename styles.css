@@ -169,9 +169,11 @@ main{
 }
 
 .info__photo{
-    width: 150px;
+    min-width: 150px;
     height: 150px;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: 0px -10px;
 }
 
 .info__data{
